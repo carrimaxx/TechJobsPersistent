@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace TechJobsPersistent.Models
 {
     public class Job
-    {
+    {                                                           //same as EventTag class
         public int Id { get; set; }
 
         public string Name { get; set; }
