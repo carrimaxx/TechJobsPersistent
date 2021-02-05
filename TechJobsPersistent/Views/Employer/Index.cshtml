@@ -1,4 +1,4 @@
-﻿@model List<TechJobsPersistent.Models.Employer>
+﻿@model List<TechJobsPersistent.Models.Employer>         //TODO Check if this is right
 
 <h1>Employers Currently Hiring</h1>
 
@@ -10,7 +10,7 @@ else
 {
     <div>
         <ul>
-            @foreach (Employer employer in Model)
+            @foreach (Employer employer in Model)               //TODO should this be from dbcontext? or leave as is?
             {
                 <li>
                     <a asp-controller="Employer" asp-action="About" asp-route-id="@employer.Id">@employer.Name</a>
