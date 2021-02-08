@@ -48,7 +48,6 @@ namespace TechJobsPersistent.Controllers
                 {
                     Name = addJobViewModel.Name,
                     Employer = employer,                        //TODO check if this is right,
-                    EmployerId = employer.Id
                 };
 
                 context.Jobs.Add(newJob);
@@ -56,7 +55,7 @@ namespace TechJobsPersistent.Controllers
 
                 return Redirect("/Jobs");               /// or to AllJobs?
             }
-            return View(addJobViewModel);
+            return View("AddJob", addJobViewModel);
         }
 
         public IActionResult Detail(int id)

@@ -53,7 +53,7 @@ namespace TechJobsPersistent.Controllers
                 return Redirect("/Employer");
 
             }
-            return View();
+            return View("Add", addEmployerViewModel);
         }
 
         public IActionResult About(int id)          //TODO Controllers, #5 double check this, use either find or tolist, if tolist then use an array/list

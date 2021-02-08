@@ -20,7 +20,12 @@
 
     <div class="form-group">
         <label asp-for="Employer">Employer</label>
-        <select asp-for="Employer" asp-items="Model.Employers"></select>
+        <select asp-for="Employer" asp-items="Model.Employers">Employers</select>
+    </div>
+
+    <div>
+        <p>Add an employer if you didn't see the employer's name in the list</p>
+        <a asp-controller="Employer" asp-action="Add">Add an employer</a>
     </div>
 
     @*<div class="form-group">                    this meands I need to add more properties to the controller and viewmodel
