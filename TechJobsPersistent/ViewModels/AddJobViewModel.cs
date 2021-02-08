@@ -13,10 +13,11 @@ namespace TechJobsPersistent.ViewModels
     {
         public int EmployerId { get; set; }             // ?  selected employer's id, will be hidden in the form?
 
-        [Required(ErrorMessage = "Name is required.")]
+        [Required(ErrorMessage = "Job name is required.")]
         [StringLength(50, MinimumLength = 3, ErrorMessage = "Name must be between 3 and 50 characters")]
         public string Name { get; set; }            // job name
 
+        [Required(ErrorMessage = "Employer name is required.")]
         public Employer Employer { get; set; }
 
         public List<SelectListItem> Employers { get; set; }
@@ -29,7 +30,7 @@ namespace TechJobsPersistent.ViewModels
             {
                 Employers.Add(new SelectListItem
                 {
-                    Value = employer.Id.ToString(),         //TODO double check this
+                    Value = employer.Id.ToString(),         //TODO double check this, seems correct
                     Text = employer.Name
                 });
             }

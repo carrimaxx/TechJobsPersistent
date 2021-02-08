@@ -9,7 +9,7 @@ namespace TechJobsPersistent.Models
         public string Name { get; set; }
         public string Location { get; set; }
 
-        public List<Employer> employers { get; set; }           //TODO is this right, list of what
+        // public List<Employer> employers { get; set; }           //TODO is this right, list of what
 
         public Employer(string name, string location)
         {

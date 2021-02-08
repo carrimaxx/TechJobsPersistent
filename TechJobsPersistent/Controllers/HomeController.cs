@@ -38,16 +38,17 @@ namespace TechJobsPersistent.Controllers
         }
 
         [HttpPost]
-        public IActionResult ProcessAddJobForm(AddJobViewModel addJobViewModel)         // this seems wrong
+        public IActionResult ProcessAddJobForm(AddJobViewModel addJobViewModel)        
         {
             if (ModelState.IsValid)
             {
                 // add an instance of addjobviewodel first, them save the values of the properties/properties to the model Job.cs
-                Employer employer = context.Employers.Find(addJobViewModel.Id);         //TODO check if this is right, should this be toList
+                Employer employer = context.Employers.Find(addJobViewModel.EmployerId);         
                 Job newJob = new Job()
                 {
                     Name = addJobViewModel.Name,
-                    Employer = employer,
+                    Employer = employer,                        //TODO check if this is right,
+                    EmployerId = employer.Id
                 };
 
                 context.Jobs.Add(newJob);

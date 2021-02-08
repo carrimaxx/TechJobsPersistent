@@ -21,6 +21,6 @@ namespace TechJobsPersistent.ViewModels
         //    Location = Location;
         //}
 
-        public AddEmployerViewModel() { }
+        //public AddEmployerViewModel() { }
     }
 }

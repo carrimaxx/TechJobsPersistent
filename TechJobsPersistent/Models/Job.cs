@@ -11,7 +11,7 @@ namespace TechJobsPersistent.Models
 
         public Employer Employer { get; set; }
 
-        public int EmployerId { get; set; }
+        public int EmployerId { get; set; }         //TODO is this right, revisit composite primary keys, then check Home Controller post method again
 
         public List<JobSkill> JobSkills { get; set; }
 
@@ -23,5 +23,15 @@ namespace TechJobsPersistent.Models
         {
             Name = name;
         }
+
+        public Job(string name, int employerId, Employer employer)
+        {
+            Name = name;
+            EmployerId = employerId;
+
+        }
+
+
+        // TODO I think I need another complete constructor
     }
 }

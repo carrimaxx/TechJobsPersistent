@@ -1,25 +1,34 @@
 ﻿@*Use ViewModel here*@
 
+@model TechJobsPersistent.ViewModels.AddJobViewModel
+
 <h1>Add a Job</h1>
 
 <form asp-controller="Home" asp-action="ProcessAddJobForm" method="post">
     <div class="form-group">
         <label asp-for="Name"></label>
         <input class="form-control" asp-for="Name" />
-        <span></span>
+        <span asp-validation-for="Name"></span>
     </div>
 
     @*Add employer and add skill info*@
+    @*<div class="form-group">
+            <label asp-for="Employer"></label>
+            <input class="form-control" asp-for="Employer" />
+            <span asp-validation-for="Employer"></span>
+        </div>*@
+
     <div class="form-group">
-        <label asp-for="Employer"></label>
-        <input class="form-control" asp-for="Employer" />
-        <span></span>
+        <label asp-for="Employer">Employer</label>
+        <select asp-for="Employer" asp-items="Model.Employers"></select>
     </div>
-    <div class="form-group">
-        <label asp-for="Skills">Skills</label>
-        <input class="form-control" asp-for="Skills"/>
+
+    @*<div class="form-group">                    this meands I need to add more properties to the controller and viewmodel
+        <label asp-for="Skills"></label>
+        <input class="form-control" asp-for="Skills" />
         <span></span>
-    </div>
+    </div>*@
+
 
     <input type="submit" value="Add Job" />
 </form>
