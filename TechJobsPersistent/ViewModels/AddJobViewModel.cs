@@ -9,13 +9,15 @@ using TechJobsPersistent.Models;
 
 namespace TechJobsPersistent.ViewModels
 {
-    public class AddJobViewModel                    // Remember: this is for the form
+    public class AddJobViewModel                    // Remember: this is for the form, refer to the Job.cs Model
     {
-        public int Id { get; set; }             // ?  selected employer's id, will be hidden in the form?
+        public int EmployerId { get; set; }             // ?  selected employer's id, will be hidden in the form?
 
         [Required(ErrorMessage = "Name is required.")]
         [StringLength(50, MinimumLength = 3, ErrorMessage = "Name must be between 3 and 50 characters")]
         public string Name { get; set; }            // job name
+
+        public Employer Employer { get; set; }
 
         public List<SelectListItem> Employers { get; set; }
 
@@ -27,7 +29,7 @@ namespace TechJobsPersistent.ViewModels
             {
                 Employers.Add(new SelectListItem
                 {
-                    Value = employer.Id.ToString(),
+                    Value = employer.Id.ToString(),         //TODO double check this
                     Text = employer.Name
                 });
             }

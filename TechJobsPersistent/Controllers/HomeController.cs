@@ -42,11 +42,12 @@ namespace TechJobsPersistent.Controllers
         {
             if (ModelState.IsValid)
             {
-                Employer employer = context.Employers.Find(addJobViewModel.Id);         //this is wrong
-                Job newJob = new Job
+                // add an instance of addjobviewodel first, them save the values of the properties/properties to the model Job.cs
+                Employer employer = context.Employers.Find(addJobViewModel.Id);         //TODO check if this is right, should this be toList
+                Job newJob = new Job()
                 {
-                    Name = 
-                    Employer = employer;
+                    Name = addJobViewModel.Name,
+                    Employer = employer,
                 };
 
                 context.Jobs.Add(newJob);

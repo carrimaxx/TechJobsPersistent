@@ -58,8 +58,8 @@ namespace TechJobsPersistent.Controllers
 
         public IActionResult About(int id)          //TODO Controllers, #5 double check this, use either find or tolist, if tolist then use an array/list
         {
-            Employer aboutEmployer = context.Employers.Find(id);    //TODO revisit this
-            return View(aboutEmployer);
+            Employer employer = context.Employers.Find(id);    //TODO revisit this
+            return View(employer);
         }
     }
 }

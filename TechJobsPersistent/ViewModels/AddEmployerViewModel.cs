@@ -15,5 +15,12 @@ namespace TechJobsPersistent.ViewModels
         public string Location { get; set; }
 
         // TODO add constructors? check part 2 adding employers, controllers #4
+
+        //public AddEmployerViewModel(name, employer) {
+        //    Name = name;
+        //    Location = Location;
+        //}
+
+        public AddEmployerViewModel() { }
     }
 }

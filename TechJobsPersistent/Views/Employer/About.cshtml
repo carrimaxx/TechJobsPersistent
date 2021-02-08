@@ -2,8 +2,14 @@
 
 <h1>Employer: @Model.Name</h1>
 
-<div>
-    <p>Id: @Model.Id</p>        @*optional?*@
-    <p>Name: @Model.Name</p>
-    <p>Location: @Model.Location</p>
-</div>
+
+    <div>
+        <p>Id: @Model.Id</p>        @*optional?*@
+        <p>Name: @Model.Name</p>
+        <p>Location: @Model.Location</p>
+    </div>
+
+
+
+
+@*USe this? <a asp-controller="Employer" asp-action="About" asp-route-id="@Model.EmployerId">Add Tag</a>*@

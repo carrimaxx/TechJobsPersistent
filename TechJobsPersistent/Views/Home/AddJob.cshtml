@@ -1,21 +1,23 @@
-﻿<h1>Add a Job</h1>
+﻿@*Use ViewModel here*@
+
+<h1>Add a Job</h1>
 
 <form asp-controller="Home" asp-action="ProcessAddJobForm" method="post">
     <div class="form-group">
-        <label>Name</label>
-        <input class="form-control" />
+        <label asp-for="Name"></label>
+        <input class="form-control" asp-for="Name" />
         <span></span>
     </div>
 
     @*Add employer and add skill info*@
     <div class="form-group">
-        <label>Employer</label>
-        <input class="form-control" />
+        <label asp-for="Employer"></label>
+        <input class="form-control" asp-for="Employer" />
         <span></span>
     </div>
     <div class="form-group">
-        <label>Skills</label>
-        <input class="form-control" />
+        <label asp-for="Skills">Skills</label>
+        <input class="form-control" asp-for="Skills"/>
         <span></span>
     </div>
 
