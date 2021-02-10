@@ -11,7 +11,7 @@ namespace TechJobsPersistent.Models
 
         public Employer Employer { get; set; }
 
-        public int EmployerId { get; set; }         //TODO is this right, revisit composite primary keys, then check Home Controller post method again
+        public int EmployerId { get; set; }         //TODO is this right, revisit composite primary keys, then check Home Controller httppost again
 
         public List<JobSkill> JobSkills { get; set; }
 
@@ -19,16 +19,12 @@ namespace TechJobsPersistent.Models
         {
         }
 
-        public Job(string name)
-        {
-            Name = name;
-        }
-
         public Job(string name, Employer employer)
         {
             Name = name;
             EmployerId = employer.Id;
-            Employer = employer;
+            //Employer = employer;
+
 
         }
 

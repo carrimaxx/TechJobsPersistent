@@ -12,29 +12,30 @@
     </div>
 
     @*Add employer and add skill info*@
-    @*<div class="form-group">
-            <label asp-for="Employer"></label>
-            <input class="form-control" asp-for="Employer" />
-            <span asp-validation-for="Employer"></span>
-        </div>*@
+    <div class="form-group">
+        <label asp-for="EmployerId">Employer</label>
+        <select class="form-control" asp-for="EmployerId" asp-items="Model.Employers">Employers</select>
+        <span asp-validation-for="EmployerId"></span>
+    </div>
 
     <div class="form-group">
-        <label asp-for="Employer">Employer</label>
-        <select asp-for="Employer" asp-items="Model.Employers">Employers</select>
-    </div>
 
-    <div>
-        <p>Add an employer if you didn't see the employer's name in the list</p>
-        <a asp-controller="Employer" asp-action="Add">Add an employer</a>
+        @foreach (var skill in @Model.Skills)
+        {
+            @*<label asp-for="Skills"></label>*@
+            <label>Skills</label>
+            <input type="checkbox" name="selectedSkills" value="@skill.Id" />@skill.Name
+        }
     </div>
-
-    @*<div class="form-group">                    this meands I need to add more properties to the controller and viewmodel
-        <label asp-for="Skills"></label>
-        <input class="form-control" asp-for="Skills" />
-        <span></span>
-    </div>*@
 
 
     <input type="submit" value="Add Job" />
 </form>
+
+<div>
+    <a asp-controller="Employer" asp-action="Add">Add an employer</a>
+</div>
+<div>
+    <a asp-controller="Skill" asp-action="Add">Add skill</a>
+</div>
 
