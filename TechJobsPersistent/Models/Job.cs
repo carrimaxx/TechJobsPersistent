@@ -19,16 +19,12 @@ namespace TechJobsPersistent.Models
         {
         }
 
-        public Job(string name, Employer employer)
+        public Job(string name)
         {
             Name = name;
-            EmployerId = employer.Id;
-            //Employer = employer;
+
 
 
         }
-
-
-        // TODO I think I need another complete constructor
     }
 }

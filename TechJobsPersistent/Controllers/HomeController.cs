@@ -43,12 +43,12 @@ namespace TechJobsPersistent.Controllers
         {
             if (ModelState.IsValid)
             {
-                // add an instance of addjobviewodel first, them save the values of the properties/properties to the model Job.cs
-                Employer employer = context.Employers.Find(addJobViewModel.EmployerId);         
+                      
                 Job newJob = new Job()
                 {
                     Name = addJobViewModel.Name,
-                    Employer = employer             //TODO check if this is right,
+                    Employer = context.Employers.Find(addJobViewModel.EmployerId),
+                    EmployerId = addJobViewModel.EmployerId
                 };
 
                 foreach(var skill in selectedSkills)
@@ -56,16 +56,16 @@ namespace TechJobsPersistent.Controllers
                     JobSkill jobSkill = new JobSkill
                     {
                         JobId = newJob.Id,
-                        SkillId = skill.SkillId.ToString()    //maybe a new object here
+                        Job = newJob,
+                        SkillId = Int32.Parse(skill)
                     };
                     context.JobSkills.Add(jobSkill);
                 }
 
                 context.Jobs.Add(newJob);
-                
                 context.SaveChanges();
 
-                return Redirect("/Jobs");               
+                return Redirect("Index");               
             }
             return View("AddJob", addJobViewModel);
         }

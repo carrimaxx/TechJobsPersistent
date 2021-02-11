@@ -12,10 +12,10 @@ namespace TechJobsPersistent.Models
         }
 
         // not sure about this constructor yet
-        public JobSkill(Job job, Skill skill)
-        {
-            JobId = job.Id;
-            SkillId = skill.Id;
-        }
+        //public JobSkill(Job job, Skill skill)
+        //{
+        //    JobId = job.Id;
+        //    SkillId = skill.Id;
+        //}
     }
 }
