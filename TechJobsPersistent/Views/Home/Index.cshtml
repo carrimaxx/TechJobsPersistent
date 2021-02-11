@@ -4,12 +4,21 @@
 
 @model List<TechJobsPersistent.Models.Job>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome to TechJobs!</h1>
-    <p><a asp-controller="Home" asp-action="AddJob">Add Jobs</a></p>
-    <p><a asp-controller="List" asp-action="Index">List Jobs</a></p>
-    <p><a asp-controller="Search" asp-action="Index">Search Jobs</a></p>
-</div>
+    <div class="row align-items-center p-5">
+        <div class="text-center col-8">
+            <h1 class="display-4 mb-2">Welcome to TechJobs!</h1>
+            <div class="mt-5">
+                <p class="text-start"><a asp-controller="Home" asp-action="AddJob" class="btn btn-primary">Add Jobs</a></p>
+                <p class="text-start"><a asp-controller="List" asp-action="Index" class="btn btn-outline-primary">List Jobs</a></p>
+                <p class="text-start"><a asp-controller="Search" asp-action="Index" class="btn btn-outline-primary">Search Jobs</a></p>
+            </div>
+            
+        </div>
+
+        <div class="col-4">
+            <img src="https://image.freepik.com/free-vector/programming-languages-learning-software-coding-courses-website-development-class-script-writing-it-programmers-cartoon-characters_335657-3454.jpg" class="img-fluid"/>
+        </div>
+    </div>
 
 @if (Model.Count == 0)
 {
@@ -17,17 +26,23 @@
 }
 else
 {
-    <table class="table">
-        <tr>
-            <th>Position Name</th>
-            <th>Employer</th>
-        </tr>
-        @foreach (Job job in Model)
-        {
-            <tr>
-                <td><a asp-controller="Home" asp-action="Detail" asp-route-id="@job.Id">@job.Name</a></td>
-                <td>@job.Employer.Name</td>
-            </tr>
-        }
-    </table>
+    <div class="shadow-sm p-3 mb-5 bg-body rounded">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Position Name</th>
+                    <th>Employer</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Job job in Model)
+                {
+                    <tr>
+                        <td><a asp-controller="Home" asp-action="Detail" asp-route-id="@job.Id">@job.Name</a></td>
+                        <td>@job.Employer.Name</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 }

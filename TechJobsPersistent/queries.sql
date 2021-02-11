@@ -4,6 +4,5 @@
 --Part 2
 -- SELECT name FROM employers WHERE location LIKE "St. Louis";
 
-
 --Part 3
 --SELECT name, description FROM skills INNER JOIN jobskills ON skills.id = jobskills.skillId WHERE jobId IS NOT NULL;
