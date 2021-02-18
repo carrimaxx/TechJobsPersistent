@@ -43,7 +43,6 @@ namespace TechJobsPersistent.Controllers
         {
             if (ModelState.IsValid)
             {
-                      
                 Job newJob = new Job()
                 {
                     Name = addJobViewModel.Name,
